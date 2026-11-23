@@ -70,6 +70,16 @@ All extracted indicators were programmatically verified using `ioc_enricher.py`:
 * Queries **VirusTotal v3** (`/api/v3/ip_addresses`, `/urls`, `/files`) for multi-engine vendor detections.
 * Reads API keys securely from environment variables (`VT_API_KEY`, `ABUSEIPDB_API_KEY`) and exports structured results to `enrichment_output.json`.
 
+## Evidence Screenshots
+### 1. C2 Beaconing & Malicious User-Agent (Wireshark)
+![Wireshark HTTP Beaconing](screenshots_SOC-T1_project/01_wireshark_http_beaconing.png)
+
+### 2. NetSupport RAT Command Stream (`tcp.stream eq 40`)
+![Follow HTTP Stream](screenshots_SOC-T1_project/02_wireshark_http_stream.png)
+
+### 3. Automated IOC Enrichment Output (`ioc_enricher.py`)
+![IOC Enricher Output](screenshots_SOC-T1_project/03_ioc_enricher_output.png)
+
 ### Usage
 ```bash
 export VT_API_KEY="your_virustotal_api_key"
