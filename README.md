@@ -3,7 +3,11 @@
 ## Executive Summary
 During a routine Tier-1 network traffic triage of a suspicious PCAP capture (`2026-02-28-traffic-analysis-exercise.pcap`), Command-and-Control (C2) beaconing activity associated with **NetSupport RAT** was identified originating from internal host **`10.2.28.88`**. 
 
-The compromised endpoint established persistent outbound HTTP communications directly to external IP **`45.131.214.85`** over **TCP port 443** without performing a prior DNS lookup. To accelerate triage and eliminate manual lookups, a custom Python CLI tool (`ioc_enricher.py`) was developed to automatically enrich extracted Indicators of Compromise (IOCs) via the **VirusTotal v3** and **AbuseIPDB v2** REST APIs.
+## Overview
+A lightweight Python CLI utility built to streamline network traffic diagnostics, anomaly filtering, and initial incident triage. The tool parses PCAP files and automatically enriches extracted Indicators of Compromise (IPs, domains, URLs, and hashes) via the **VirusTotal v3** and **AbuseIPDB v2** REST APIs (`ioc_enricher.py`).
+
+## Sample Analysis Finding
+* **Suspicious Outbound Traffic:** The compromised endpoint established persistent outbound HTTP communications directly to external IP **`45.131.214.85`** over **TCP port 443** without performing a prior DNS lookup (indicating potential C2 communication or hardcoded IP behavior).
 
 ---
 
